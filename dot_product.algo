@@ -1,0 +1,61 @@
+//procedure 
+PROCEDURE dot_product(vect_1,vect_2:ARRAY_OF INTEGER[10], VAR ps:INTEGER)
+VAR
+ i,n:INTEGER;
+BEGIN
+ Read(n)
+ 
+ FOR i FROM 0 TO n STEP step  DO
+     ps:+= ps + vect_1[i] * vect_2[i];
+     IF (ps == 0) THEN
+         Write("vectors are orthogonal")
+         Write(ps)
+         ELSE
+         Write(ps)
+     END_IF
+     
+ END_FOR
+
+END
+
+ALGORITHM test_dot_product_procedure
+VAR
+   vect_1 :ARRAY_OF INTEGER := [3,0,1];
+   vect_2 :ARRAY_OF INTEGER := [1,6,3];
+   ps:INTEGER:=0;
+BEGIN
+   dot_product(vect_1,vect_2,ps);
+
+END
+
+
+
+FUNCTION dot_product(vect_1,vect_2:ARRAY_OF INTEGER[10]) : INTEGER
+VAR
+    ps:INTEGER:=0;
+    i,n:INTEGER;
+BEGIN
+    Read(n)
+ 
+ FOR i FROM 0 TO n STEP step  DO
+     ps:+= ps + vect_1[i] * vect_2[i];
+     IF (ps == 0) THEN
+         Write("vectors are orthogonal")
+         Write(ps)
+         ELSE
+         Write(ps)
+     END_IF
+     
+ END_FOR
+    RETURN value ;
+END
+
+ALGORITHM test_dot_product_function
+VAR
+   vect_1 :ARRAY_OF INTEGER := [3,0,1];
+   vect_2 :ARRAY_OF INTEGER := [1,6,3];
+   
+BEGIN
+   dot_product(vect_1,vect_2);
+
+END
